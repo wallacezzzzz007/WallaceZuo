@@ -1,0 +1,36 @@
+.desc{
+    margin-top:0;
+    margin-bottom:0;
+}
+.heading{
+    margin-top: 0px;
+    margin-bottom:0px;
+}
+
+h2{
+    margin-top:0%;
+    margin-bottom:0;
+}
+
+
+.left{
+    margin-top:0%;
+    margin-bottom:0px;
+    text-align: start;
+    float: left;
+    width:80%;
+}
+
+.list{
+    margin-top:0;
+}
+
+
+.right{
+    margin-top:0%;
+    margin-bottom:0px;
+    height:22px;
+    text-align: end;
+    float: right;
+    width:20%;
+}
