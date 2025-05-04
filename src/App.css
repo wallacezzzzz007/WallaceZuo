@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: #faf8e6;
+}
+
+.launch-container {
+  background: #faf8e6;
+  color: #222;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s, color 0.5s;
+  position: relative;
+}
+
+.launch-container.dark {
+  background: #0d1b2a;
+  color: #ffffff;
+}
+
+/* Toggle button container */
+.toggle-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+/* Entire switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider track */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+/* Slider thumb */
+.slider::before {
+  content: "☀️";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* Dark mode: toggle on */
+input:checked + .slider {
+  background-color: #334a7d;
+}
+
+input:checked + .slider::before {
+  transform: translateX(30px);
+  content: "🌙";
+}
+
+/* Rocket */
+.rocket-flying {
+  animation: float 2s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.rocket-small {
+  width: 200px;
+}
+
+.rocket-large {
+  width: 400px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shooting stars */
+.shooting-star {
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 1.5s ease-out infinite;
+  opacity: 0.8;
+  transform: rotate(-45deg);
+  z-index: 1;
+}
+
+.shooting-star:nth-child(2) {
+  top: 20%;
+  left: 80%;
+  animation-delay: 5s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 60%;
+  left: 90%;
+  animation-delay: 12s;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-300px) translateY(300px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Star field container */
+.star-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Individual stars */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkleStar 3s infinite ease-in-out;
+}
+
+@keyframes twinkleStar {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Title and subtitle */
+h1 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+  z-index: 2;
+  text-align: center;
+}
+
+.building-text {
+  font-size: 16px;
+  font-style: italic;
+  z-index: 2;
+  text-align: center;
+}
